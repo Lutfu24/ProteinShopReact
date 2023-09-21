@@ -1,0 +1,17 @@
+.footer_top {
+  margin-top: 40px;
+  background: white;
+}
+.footer_top_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer_top_images {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  width: 900px;
+  overflow: hidden;
+}
