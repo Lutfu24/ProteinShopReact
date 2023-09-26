@@ -84,7 +84,7 @@ const Header = () => {
               onClick={toggleIsLoading}
               className={styles.header_bottom_menu}
             >
-              <i class="fa-solid fa-bars"></i>
+              <i className="fa-solid fa-bars"></i>
               <h6 className={styles.header_bottom_h6}>Menyu</h6>
             </div>
             {openmenu && (
@@ -132,11 +132,11 @@ const Header = () => {
                 placeholder="Məhsul axtarışı"
               ></input>
               <a href="#" className={styles.header_bottom_a}>
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass"></i>
               </a>
             </form>
             <div className={styles.header_bottom_shop}>
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i className="fa-solid fa-cart-shopping"></i>
               <div>
                 <span>Səbət</span>
               </div>

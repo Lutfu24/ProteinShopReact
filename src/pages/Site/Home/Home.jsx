@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Home.css";
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -199,20 +200,22 @@ const Home = () => {
         <div className="container">
           <h4 className="popular_title">Ən çox satılanlar</h4>
           <div className="popular_items">
-            {posts.map((item) => {
+            {posts.map((item, index) => {
               if (item.id > posts[3].id) {
                 return;
               } else {
                 return (
-                  <div className="popular_item">
+                  <div key={index} className="popular_item">
                     <div className="popular_item_image">
-                      <img
-                        src={require(`../../../img/pages/Home/${item.images[0].path}`)}
-                        alt=""
-                      />
-                      <i class="fa-regular fa-heart"></i>
+                      <Link to={`/products/${item.id}`}>
+                        <img
+                          src={require(`../../../img/pages/Home/${item.images[0].path}`)}
+                          alt=""
+                        />
+                      </Link>
+                      <i className="fa-regular fa-heart"></i>
                     </div>
-                    <h6>{item.name}</h6>
+                    <Link to={`/products/${item.id}`}>{item.name}</Link>
                     <h1>{item.price} m</h1>
                     <button className="popular_item_btn">Səbətə at</button>
                   </div>
@@ -226,18 +229,18 @@ const Home = () => {
         <div className="container">
           <h4 className="news_title">Yeni məhsullar</h4>
           <div className="news_items">
-            {news.map((item) => {
+            {news.map((item, index) => {
               if (item.id > news[3].id) {
                 return;
               } else {
                 return (
-                  <div className="news_item">
+                  <div key={index} className="news_item">
                     <div className="news_item_image">
                       <img
                         src={require(`../../../img/pages/Home/${item.images[0].path}`)}
                         alt=""
                       />
-                      <i class="fa-regular fa-heart"></i>
+                      <i className="fa-regular fa-heart"></i>
                     </div>
                     <h6>{item.name}</h6>
                     <h1>{item.price} m</h1>
@@ -253,18 +256,18 @@ const Home = () => {
         <div className="container">
           <h4 className="discount_title">Endirimli məhsullar</h4>
           <div className="discount_items">
-            {disc.map((item) => {
+            {disc.map((item, index) => {
               if (item.id > disc[3].id) {
                 return;
               } else {
                 return (
-                  <div className="news_item">
+                  <div key={index} className="news_item">
                     <div className="news_item_image">
                       <img
                         src={require(`../../../img/pages/Home/${item.images[0].path}`)}
                         alt=""
                       />
-                      <i class="fa-regular fa-heart"></i>
+                      <i className="fa-regular fa-heart"></i>
                     </div>
                     <h6>{item.name}</h6>
                     <h1>{item.price} m</h1>
@@ -280,12 +283,12 @@ const Home = () => {
         <div className="container">
           <h5 className="Articles_title">Məqalələr</h5>
           <div className="Articles_items">
-            {blog.map((item) => {
+            {blog.map((item, index) => {
               if (item.id > blog[1].id) {
                 return;
               } else {
                 return (
-                  <div className="Articles_item">
+                  <div key={index} className="Articles_item">
                     <div className="Articles_item_image">
                       <img
                         src={require(`../../../img/pages/Home/${item.blogImages[0].path}`)}

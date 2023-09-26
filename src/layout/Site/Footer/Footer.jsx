@@ -23,8 +23,9 @@ const Footer = () => {
                 id="slider"
                 className="w-[1000px] h-full overflow-hidden scroll-smooth whitespace-nowrap"
               >
-                {data.map((item) => (
+                {data.map((item, index) => (
                   <img
+                    key={index}
                     className="w-[120px] inline-block p-2"
                     src={item.img}
                     alt="/"

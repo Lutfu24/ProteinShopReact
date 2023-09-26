@@ -17,14 +17,14 @@ const Brands = () => {
         <div className="container">
           <h1>Brendlər</h1>
           <div className="brands">
-            {brands.map((item) => {
+            {brands.map((item, index) => {
               return (
-                <div className="brands_item">
+                <div key={index} className="brands_item">
                   <img
                     src={require(`../../../img/pages/Brands/${item.brandImages[0].path}`)}
                     alt=""
                   />
-                  <p>{item.name}</p>
+                  <p>{item.brandName}</p>
                 </div>
               );
             })}
