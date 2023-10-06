@@ -1,0 +1,41 @@
+.creatin_section_card {
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+}
+.creatin_section {
+  background: white;
+  margin-top: 50px;
+  width: 870px;
+}
+
+.creatin_card {
+  width: 290px;
+  height: 399px;
+  padding: 30px 25px;
+  border: 1px solid #e1e8ed;
+}
+.creatin_card_img {
+  width: 240px;
+  height: 230px;
+  display: flex;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+.creatin_card_img i {
+  margin-top: 30px;
+}
+.creatin_card_img img {
+  width: 170px;
+  height: 200px;
+  object-fit: contain;
+}
+.creatin_card_title {
+  height: 60px;
+}
+.creatin_card_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}

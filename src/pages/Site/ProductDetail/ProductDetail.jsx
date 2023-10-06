@@ -34,6 +34,16 @@ const Products = () => {
     }
   };
 
+  const CheckBrand = () => {
+    if (brand != null) {
+      return (
+        <p>
+          Brand: <Link to={"/brands"}>{brand.brandName}</Link>
+        </p>
+      );
+    }
+  };
+
   useEffect(() => {
     axios
       .get(`http://localhost:5240/api/Products/GetById?id=${id}`)
@@ -41,7 +51,6 @@ const Products = () => {
         setProduct(res.data.data);
         setbrand(res.data.data.brand);
         setProductImg(res.data.data.images);
-        console.log(res.data.data);
       });
   }, []);
   return (
@@ -52,9 +61,7 @@ const Products = () => {
         </div>
         <div className="product_detail_item">
           <div>
-            <p>
-              Brand: <Link to={"/brands"}>{brand.brandName}</Link>
-            </p>
+            {CheckBrand()}
             <div className="product_detail_img_card">
               {productImg.map((item, index) => {
                 return (
@@ -70,7 +77,9 @@ const Products = () => {
           <div className="product_detail_price">
             <i className="fa-regular fa-heart"></i>
             <Link>{IsFavorite()}</Link>
-            <p className="product_detail_price_item">{product.price} M</p>
+            <p className="product_detail_price_item">
+              {product.price} <span>₼</span>
+            </p>
           </div>
           <div className="product_detail_raiting_card">
             <ul className="product_detail_raiting_card_ul">

@@ -28,7 +28,7 @@ const Header = () => {
             </ul>
             <ul>
               <li>
-                <a href="#">Qeydiyyat</a>
+                <Link to={"/user/login"}>Qeydiyyat</Link>
               </li>
               <li>
                 <a href="#">Seçilmişlər</a>
@@ -47,7 +47,9 @@ const Header = () => {
         <div className="container">
           <div className={styles.header}>
             <div>
-              <img src={require("../../../img/Site/Header/Logotip.png")} />
+              <Link to={"/"}>
+                <img src={require("../../../img/Site/Header/Logotip.png")} />
+              </Link>
             </div>
             <div>
               <div className={styles.times}>
@@ -89,30 +91,37 @@ const Header = () => {
             </div>
             {openmenu && (
               <div className={styles.menu}>
-                <ul>
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-                  <li>4</li>
-                  <li>5</li>
+                <ul className={styles.menu_ul}>
+                  <li>
+                    <Link to={"catalog/idman-qidaları"}>İdman qidaları</Link>
+                  </li>
+                  <li>Aksesuarlar</li>
+                  <li>Geyimlər</li>
+                  <li>İdman Alətləri və Avadanlıqları</li>
+                  <li>Məşq hərəkətləri / proqramları</li>
+                  <li>Qidalanma</li>
+                  <li>Sağlamlıq</li>
+                  <li>Atletlərimiz</li>
                 </ul>
               </div>
             )}
-            <ul>
+            <ul className={styles.header_bottom_item_ul}>
               <li>
-                <a href="#">Protein</a>
+                <Link to={"catalog/proteinlər"}>Protein</Link>
               </li>
               <li>
-                <a href="#">Gainer</a>
+                <Link to={"catalog/gainerlər"}>Gainer</Link>
               </li>
               <li>
-                <a href="#">Amino</a>
+                <Link to={"catalog/aminoturşular"}>Amino</Link>
               </li>
               <li>
-                <a href="#">Kreatin</a>
+                <Link to={"catalog/kreatinlər"}>Kreatin</Link>
               </li>
               <li>
-                <a href="#">Vitamin/Mineral</a>
+                <Link to={"catalog/vitamins-and-minerals"}>
+                  Vitamin/Mineral
+                </Link>
               </li>
               <li>
                 <a href="#">Arıqladıcı</a>

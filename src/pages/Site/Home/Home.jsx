@@ -201,7 +201,7 @@ const Home = () => {
           <h4 className="popular_title">Ən çox satılanlar</h4>
           <div className="popular_items">
             {posts.map((item, index) => {
-              if (item.id > posts[3].id) {
+              if (index > 3) {
                 return;
               } else {
                 return (
@@ -230,19 +230,21 @@ const Home = () => {
           <h4 className="news_title">Yeni məhsullar</h4>
           <div className="news_items">
             {news.map((item, index) => {
-              if (item.id > news[3].id) {
+              if (index > 3) {
                 return;
               } else {
                 return (
                   <div key={index} className="news_item">
                     <div className="news_item_image">
-                      <img
-                        src={require(`../../../img/pages/Home/${item.images[0].path}`)}
-                        alt=""
-                      />
+                      <Link to={`/products/${item.id}`}>
+                        <img
+                          src={require(`../../../img/pages/Home/${item.images[0].path}`)}
+                          alt=""
+                        />
+                      </Link>
                       <i className="fa-regular fa-heart"></i>
                     </div>
-                    <h6>{item.name}</h6>
+                    <Link to={`/products/${item.id}`}>{item.name}</Link>
                     <h1>{item.price} m</h1>
                     <button className="news_item_btn">Səbətə at</button>
                   </div>
@@ -257,19 +259,21 @@ const Home = () => {
           <h4 className="discount_title">Endirimli məhsullar</h4>
           <div className="discount_items">
             {disc.map((item, index) => {
-              if (item.id > disc[3].id) {
+              if (index > 3) {
                 return;
               } else {
                 return (
                   <div key={index} className="news_item">
                     <div className="news_item_image">
-                      <img
-                        src={require(`../../../img/pages/Home/${item.images[0].path}`)}
-                        alt=""
-                      />
+                      <Link to={`/products/${item.id}`}>
+                        <img
+                          src={require(`../../../img/pages/Home/${item.images[0].path}`)}
+                          alt=""
+                        />
+                      </Link>
                       <i className="fa-regular fa-heart"></i>
                     </div>
-                    <h6>{item.name}</h6>
+                    <Link to={`/products/${item.id}`}>{item.name}</Link>
                     <h1>{item.price} m</h1>
                     <button className="news_item_btn">Səbətə at</button>
                   </div>
@@ -284,7 +288,7 @@ const Home = () => {
           <h5 className="Articles_title">Məqalələr</h5>
           <div className="Articles_items">
             {blog.map((item, index) => {
-              if (item.id > blog[1].id) {
+              if (index > 1) {
                 return;
               } else {
                 return (

@@ -63,13 +63,22 @@
   align-items: center;
 }
 .menu {
-  width: 200px;
-  height: 300px;
-  background: white;
+  width: 180px;
+  height: 320px;
+  background: black;
   z-index: 200;
   position: absolute;
-  top: 200px;
+  top: 210px;
   border: 1px solid black;
+}
+.menu_ul {
+}
+.menu_ul li {
+  font-size: 12px;
+  margin: 10px 0;
+  padding-bottom: 1.5px;
+  padding-left: 25px;
+  border-bottom: 0.5px solid rgb(215, 213, 213);
 }
 .header_bottom_item {
   display: flex;
@@ -77,7 +86,7 @@
   align-items: center;
   color: #fff;
 }
-.header_bottom_item ul {
+.header_bottom_item_ul {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -109,7 +118,7 @@
 }
 .header_bottom_a {
   background-color: #af0000;
-  padding: 4px 10px;
+  padding: 5.5px 10px;
 }
 .header_bottom_a i {
   padding-bottom: 10px;

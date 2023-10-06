@@ -3,6 +3,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   background: #e1e8ed;
+  font-family: "Jost", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .slide-container img {
   width: 1140px;
@@ -34,8 +36,7 @@ body {
 .brands_bottom_div {
   width: 128px;
   height: 200px;
-  border-top: 1px solid rgb(202, 199, 199);
-  border-right: 1px solid rgb(202, 199, 199);
+  border: 1px solid #e1e8ed;
 }
 .end {
   border-right: 0;
@@ -84,23 +85,18 @@ body {
   height: 400px;
   padding: 20px;
   position: relative;
-  border-top: 1px solid rgb(202, 199, 199);
-  border-right: 1px solid rgb(202, 199, 199);
+  border: 1px solid #e1e8ed;
 }
 .popular_item h1,
 .news_item h1 {
   position: absolute;
   bottom: 30px;
 }
-.popular_item:last-child,
-.news_item:last-child {
-  border-right: none;
-}
 .popular_item_image,
 .news_item_image {
   display: flex;
   gap: 25px;
-  width: 230px;
+  width: 260px;
   height: 220px;
   padding-left: 40px;
   padding-top: 10px;
@@ -112,9 +108,9 @@ body {
 }
 .popular_item_image img,
 .news_item_image img {
-  width: 230px;
+  width: 260px;
   height: 220px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .popular_item_btn,
 .news_item_btn {
@@ -142,7 +138,7 @@ body {
 .Articles_item_image {
   width: 640px;
   height: 300px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .Articles_item_image img {
   width: 625px;
@@ -151,11 +147,7 @@ body {
 .Articles_item {
   width: 625px;
   height: 400px;
-  border-top: 1px solid rgb(202, 199, 199);
-  border-right: 1px solid rgb(202, 199, 199);
-}
-.Articles_item:last-child {
-  border-right: none;
+  border: 1px solid #e1e8ed;
 }
 .Articles_item h6 {
   padding: 15px 20px;

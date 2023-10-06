@@ -3,6 +3,7 @@ import React from "react";
 import "../Brands/Brands.css";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Brands = () => {
   const [brands, setBrands] = useState([]);
@@ -19,13 +20,15 @@ const Brands = () => {
           <div className="brands">
             {brands.map((item, index) => {
               return (
-                <div key={index} className="brands_item">
-                  <img
-                    src={require(`../../../img/pages/Brands/${item.brandImages[0].path}`)}
-                    alt=""
-                  />
-                  <p>{item.brandName}</p>
-                </div>
+                <Link to={"/"}>
+                  <div key={index} className="brands_item">
+                    <img
+                      src={require(`../../../img/pages/Brands/${item.brandImages[0].path}`)}
+                      alt=""
+                    />
+                    <p>{item.brandName}</p>
+                  </div>
+                </Link>
               );
             })}
           </div>
