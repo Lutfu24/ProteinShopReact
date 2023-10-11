@@ -5,7 +5,7 @@ import "./Protein.css";
 
 const Protein = () => {
   const [posts, setPosts] = useState([]);
-  const id = 6;
+  const id = 5;
   useEffect(() => {
     axios.get("http://localhost:5240/api/Products/GetAll").then((res) => {
       setPosts(res.data.data);

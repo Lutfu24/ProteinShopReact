@@ -5,7 +5,7 @@ import "./Creatin.css";
 
 const Creatin = () => {
   const [posts, setPosts] = useState([]);
-  const id = 7;
+  const id = 6;
   useEffect(() => {
     axios.get("http://localhost:5240/api/Products/GetAll").then((res) => {
       setPosts(res.data.data);

@@ -7,9 +7,14 @@ import { Link, useParams } from "react-router-dom";
 
 const Products = () => {
   const [product, setProduct] = useState([]);
+  const [productid, setProductId] = useState([]);
   const [brand, setbrand] = useState([]);
   const [productImg, setProductImg] = useState([]);
   let count = 1;
+  const data = {
+    count,
+    productid,
+  };
 
   const { id } = useParams();
   const raiting = document.getElementsByClassName(".product_detail_raiting");
@@ -51,6 +56,7 @@ const Products = () => {
         setProduct(res.data.data);
         setbrand(res.data.data.brand);
         setProductImg(res.data.data.images);
+        setProductId(res.data.data.id);
       });
   }, []);
   return (
@@ -100,7 +106,16 @@ const Products = () => {
                 <button>+</button>
               </div>
             </p>
-            <button className="product_detail_raiting_card_btn">Almaq</button>
+            <button
+              onClick={() => {
+                axios
+                  .post("http://localhost:5240/api/CartItems/Add", data)
+                  .then((res) => console.log(res));
+              }}
+              className="product_detail_raiting_card_btn"
+            >
+              Almaq
+            </button>
           </div>
         </div>
         <div className="product_detail_desc">{product.description}</div>

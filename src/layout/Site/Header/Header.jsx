@@ -7,6 +7,9 @@ const Header = () => {
   const toggleIsLoading = () => {
     setOpenmenu((current) => !current);
   };
+
+  const copyUser = JSON.parse(localStorage.getItem("user"));
+
   return (
     <>
       <nav className={styles.top_nav}>
@@ -28,7 +31,11 @@ const Header = () => {
             </ul>
             <ul>
               <li>
-                <Link to={"/user/login"}>Qeydiyyat</Link>
+                {copyUser === null ? (
+                  <Link to={"/user/login"}>Qeydiyyat</Link>
+                ) : (
+                  <Link to={"/user"}>{copyUser.userName}</Link>
+                )}
               </li>
               <li>
                 <a href="#">Seçilmişlər</a>
@@ -136,7 +143,7 @@ const Header = () => {
             <form action="">
               <input
                 className={styles.header_bottom_input}
-                type="text"
+                type="search"
                 id="bottom"
                 placeholder="Məhsul axtarışı"
               ></input>

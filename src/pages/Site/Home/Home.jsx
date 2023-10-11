@@ -32,7 +32,7 @@ const Home = () => {
       });
   }, []);
   useEffect(() => {
-    axios.get("http://localhost:5240/api/Blog/GetAll").then((res) => {
+    axios.get("http://localhost:5240/api/Blogs/GetAll").then((res) => {
       setBlog(res.data.data);
     });
   }, []);

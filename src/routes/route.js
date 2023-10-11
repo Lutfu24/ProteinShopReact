@@ -12,6 +12,7 @@ import Vitamin from "../pages/Site/Vitamin/Vitamin";
 import Login from "../pages/Site/Login/Login";
 import SiteRoot from "../pages/Site/SiteRoot/SiteRoot";
 import AdminRoot from "../pages/Admin/AdminRoot/AdminRoot";
+import User from "../pages/Site/Login/User";
 
 export const ROUTES = [
   {
@@ -57,6 +58,10 @@ export const ROUTES = [
       {
         path: "user/login",
         element: <Login />,
+      },
+      {
+        path: "/user",
+        element: <User />,
       },
     ],
   },

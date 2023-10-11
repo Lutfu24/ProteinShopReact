@@ -5,7 +5,7 @@ import "./Vitamin.css";
 
 const Vitamin = () => {
   const [posts, setPosts] = useState([]);
-  const id = 8;
+  const id = 7;
   useEffect(() => {
     axios.get("http://localhost:5240/api/Products/GetAll").then((res) => {
       setPosts(res.data.data);
