@@ -5,6 +5,8 @@ import "./Gainer.css";
 const Gainer = () => {
   const [posts, setPosts] = useState([]);
   const id = 4;
+  const yzId = 20;
+  const ykId = 21;
   useEffect(() => {
     axios.get("http://localhost:5240/api/Products/GetAll").then((res) => {
       setPosts(res.data.data);
@@ -16,7 +18,11 @@ const Gainer = () => {
         <h1></h1>
         <div className="gainer_section_card">
           {posts.map((item, index) => {
-            if (item.catalogId == id) {
+            if (
+              item.catalogId === id ||
+              item.catalogId === yzId ||
+              item.catalogId === ykId
+            ) {
               return (
                 <div key={index} className="gainer_card">
                   <div className="gainer_card_img">
@@ -32,10 +38,10 @@ const Gainer = () => {
                       <h5 className="gainer_card_title">{item.name}</h5>
                     </Link>
                     <div className="gainer_card_bottom">
-                      <p className="gainer_card_text">{item.price}</p>
-                      <a href="#" className="btn btn-primary">
-                        Go somewhere
-                      </a>
+                      <p className="gainer_card_text">
+                        {item.price} <span>₼</span>
+                      </p>
+                      <button className="gainer_item_btn">Səbətə at</button>
                     </div>
                   </div>
                 </div>

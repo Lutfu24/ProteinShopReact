@@ -6,6 +6,8 @@ import "./Vitamin.css";
 const Vitamin = () => {
   const [posts, setPosts] = useState([]);
   const id = 7;
+  const omegaId = 24;
+  const forwomenId = 25;
   useEffect(() => {
     axios.get("http://localhost:5240/api/Products/GetAll").then((res) => {
       setPosts(res.data.data);
@@ -17,7 +19,11 @@ const Vitamin = () => {
         <h1>Vitamin və minerallar</h1>
         <div className="vitamin_section_card">
           {posts.map((item, index) => {
-            if (item.catalogId == id) {
+            if (
+              item.catalogId === id ||
+              item.catalogId === omegaId ||
+              item.catalogId === forwomenId
+            ) {
               return (
                 <div key={index} className="vitamin_card">
                   <div className="vitamin_card_img">
@@ -33,10 +39,10 @@ const Vitamin = () => {
                       <h5 className="vitamin_card_title">{item.name}</h5>
                     </Link>
                     <div className="vitamin_card_bottom">
-                      <p className="vitamin_card_text">{item.price}</p>
-                      <a href="#" className="btn btn-primary">
-                        Go somewhere
-                      </a>
+                      <p className="vitamin_card_text">
+                        {item.price} <span>₼</span>
+                      </p>
+                      <button className="vitamin_item_btn">Səbətə at</button>
                     </div>
                   </div>
                 </div>

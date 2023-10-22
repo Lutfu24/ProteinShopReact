@@ -1,52 +1,52 @@
-.vitamin_section_card {
+.bcaa_section_card {
   background: white;
   display: flex;
   flex-wrap: wrap;
 }
-.vitamin_section {
+.bcaa_section {
   background: white;
   margin-top: 50px;
   width: 870px;
 }
 
-.vitamin_card {
+.bcaa_card {
   width: 290px;
   height: 399px;
   padding: 30px 25px;
   border: 1px solid #e1e8ed;
 }
-.vitamin_card_img {
+.bcaa_card_img {
   width: 240px;
   height: 230px;
   display: flex;
   padding-left: 30px;
   padding-bottom: 30px;
 }
-.vitamin_card_img i {
+.bcaa_card_img i {
   margin-top: 30px;
 }
-.vitamin_card_img img {
+.bcaa_card_img img {
   width: 170px;
   height: 200px;
   object-fit: contain;
 }
-.vitamin_card_title {
+.bcaa_card_title {
   height: 60px;
 }
-.vitamin_card_bottom {
+.bcaa_card_bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 10px;
 }
-.vitamin_item_btn {
+.bcaa_item_btn {
   border: 2px solid #e1e8ed;
   padding: 5px 30px;
   font-size: 12px;
   font-weight: 600;
   border-radius: 2px;
 }
-.vitamin_item_btn:hover {
+.bcaa_item_btn:hover {
   border: 2px solid #cc0000;
   transition: 0.5s;
 }

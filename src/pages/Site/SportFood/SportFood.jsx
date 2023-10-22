@@ -44,9 +44,9 @@ const SportFood = () => {
         <div className="sportfood_section_card">
           {records.map((item, index) => {
             if (
-              item.catalogId == id ||
-              item.catalogId == clothesId ||
-              item.catalogId == accessoriesId
+              item.catalogId === id ||
+              item.catalogId === clothesId ||
+              item.catalogId === accessoriesId
             ) {
               return;
             } else {
@@ -65,10 +65,10 @@ const SportFood = () => {
                       <h5 className="sportfood_card_title">{item.name}</h5>
                     </Link>
                     <div className="sportfood_card_bottom">
-                      <p className="sportfood_card_text">{item.price}</p>
-                      <a href="#" className="btn btn-primary">
-                        Go somewhere
-                      </a>
+                      <p className="sportfood_card_text">
+                        {item.price} <span>₼</span>
+                      </p>
+                      <button className="sportfood_item_btn">Səbətə at</button>
                     </div>
                   </div>
                 </div>

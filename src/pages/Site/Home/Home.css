@@ -115,8 +115,18 @@ body {
 .popular_item_btn,
 .news_item_btn {
   position: absolute;
+  border: 2px solid #e1e8ed;
+  padding: 5px 30px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 2px;
   bottom: 30px;
   right: 20px;
+}
+.popular_item_btn:hover,
+.news_item_btn:hover {
+  border: 2px solid #cc0000;
+  transition: 0.5s;
 }
 
 /* Articles section */
@@ -154,4 +164,23 @@ body {
 }
 .Articles_item span {
   padding-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .slide-container {
+    width: auto;
+  }
+  .slide-container img {
+    width: auto;
+  }
+  .popular_items,
+  .news_items,
+  .discount_items,
+  .Articles_items,
+  .brands_top {
+    flex-direction: column;
+  }
+  .brands_bottom {
+    flex-wrap: wrap;
+  }
 }

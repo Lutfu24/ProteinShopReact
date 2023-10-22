@@ -64,18 +64,51 @@
 }
 .menu {
   width: 180px;
-  height: 320px;
-  background: black;
+  height: 349px;
+  background: white;
+  opacity: 0.8;
   z-index: 200;
   position: absolute;
   top: 210px;
-  border: 1px solid black;
+  border: 1px solid white;
 }
-.menu_ul {
+.header_bottom_menu:hover {
+  cursor: pointer;
+}
+.sport_food {
+  width: 180px;
+  height: 349px;
+  background: white;
+  z-index: 200;
+  position: absolute;
+  top: 210px;
+  left: 290px;
+  opacity: 0.8;
+  border: 1px solid white;
+  display: none;
+  position: absolute;
+}
+.menu_link {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 14px;
+  font-weight: 800;
+}
+.open {
+  opacity: 0.8;
+}
+.menu_link:hover .sport_food {
+  display: block;
+}
+.menu_link:hover {
+  color: #cc0000;
+  transition: 0.5s;
 }
 .menu_ul li {
   font-size: 12px;
   margin: 10px 0;
+  color: black;
   padding-bottom: 1.5px;
   padding-left: 25px;
   border-bottom: 0.5px solid rgb(215, 213, 213);
@@ -131,4 +164,10 @@
 }
 .header_bottom_shop i {
   font-size: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .header_bottom_item_ul {
+    overflow: hidden;
+  }
 }

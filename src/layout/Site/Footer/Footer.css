@@ -7,11 +7,9 @@
   justify-content: space-between;
   align-items: center;
 }
-.footer_top_images {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 20px;
-  width: 900px;
-  overflow: hidden;
+
+@media screen and (max-width: 768px) {
+  .footer_top_item {
+    width: auto;
+  }
 }

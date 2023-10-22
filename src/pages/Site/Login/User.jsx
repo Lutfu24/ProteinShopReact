@@ -1,17 +1,13 @@
 import axios from "axios";
-import React from "react";
-import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const User = (props) => {
-  const navigate = useNavigate();
+const User = () => {
   useEffect(() => {
+    const userName = Cookies.get("username");
     axios
-      .get(`http://localhost:5240/api/Auth/GetUser?userName=${props.Data}`, {
-        headers: {
-          Authorization: "Bearer " + props.Token,
-        },
-      })
+      .get(`http://localhost:5240/api/Auth/GetUser?userName=${userName}`)
       .then((res) => {
         localStorage.setItem("user", JSON.stringify(res.data.data));
       })
@@ -20,18 +16,32 @@ const User = (props) => {
 
   const copyUser = JSON.parse(localStorage.getItem("user"));
 
-  return copyUser === null ? (
-    navigate("/user/login")
-  ) : (
+  return (
     <div className="login">
       <div className="container">
         <div className="login_section">
           <h1>Mənim hesabım</h1>
           <form className="login_form">
-            <input type="text" defaultValue={copyUser.userName} id="userName" />
-            <input type="text" defaultValue={copyUser.fullName} id="fullName" />
-            <input type="email" defaultValue={copyUser.email} id="email" />
-            <input type="tel" defaultValue={copyUser.phoneNumber} id="text" />
+            <input
+              type="text"
+              defaultValue={copyUser === null ? null : copyUser.userName}
+              id="userName"
+            />
+            <input
+              type="text"
+              defaultValue={copyUser === null ? null : copyUser.fullName}
+              id="fullName"
+            />
+            <input
+              type="email"
+              defaultValue={copyUser === null ? null : copyUser.email}
+              id="email"
+            />
+            <input
+              type="tel"
+              defaultValue={copyUser === null ? null : copyUser.phoneNumber}
+              id="text"
+            />
           </form>
           <Link>
             <span className="passw_change">Şifrəni dəyiş</span>

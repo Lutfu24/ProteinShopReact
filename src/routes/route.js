@@ -9,10 +9,13 @@ import SportFood from "../pages/Site/SportFood/SportFood";
 import Amino from "../pages/Site/Amino/Amino";
 import Creatin from "../pages/Site/Creatin/Creatin";
 import Vitamin from "../pages/Site/Vitamin/Vitamin";
+import Slimm from "../pages/Site/Slimm/Slimm";
 import Login from "../pages/Site/Login/Login";
 import SiteRoot from "../pages/Site/SiteRoot/SiteRoot";
 import AdminRoot from "../pages/Admin/AdminRoot/AdminRoot";
 import User from "../pages/Site/Login/User";
+import BCAA from "../pages/Site/BCAA/BCAA";
+import Cart from "../pages/Site/Cart/Cart";
 
 export const ROUTES = [
   {
@@ -56,12 +59,24 @@ export const ROUTES = [
         element: <Vitamin />,
       },
       {
+        path: "catalog/yağ-yandıranlar",
+        element: <Slimm />,
+      },
+      {
+        path: "catalog/bcaa",
+        element: <BCAA />,
+      },
+      {
         path: "user/login",
         element: <Login />,
       },
       {
         path: "/user",
         element: <User />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

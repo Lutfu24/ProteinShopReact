@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Header.module.css";
+import "./Header.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -12,9 +12,9 @@ const Header = () => {
 
   return (
     <>
-      <nav className={styles.top_nav}>
+      <nav className="top_nav">
         <div className="container">
-          <div className={styles.top_nav_item}>
+          <div className="top_nav_item">
             <ul>
               <li>
                 <a href="#">Məqalələr</a>
@@ -50,16 +50,16 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      <div className={styles.Header}>
+      <div className="Header">
         <div className="container">
-          <div className={styles.header}>
+          <div className="header">
             <div>
               <Link to={"/"}>
                 <img src={require("../../../img/Site/Header/Logotip.png")} />
               </Link>
             </div>
             <div>
-              <div className={styles.times}>
+              <div className="times">
                 <i className="fa-regular fa-clock"></i>
                 <div>
                   <span>Mağazanın iş qrafiki:</span>
@@ -68,7 +68,7 @@ const Header = () => {
               </div>
             </div>
             <div>
-              <div className={styles.adress}>
+              <div className="adress">
                 <i className="fa-solid fa-location-dot"></i>
                 <div>
                   <h6>Ünvan 1: N.Nərimanov m/s, Təbriz küçəsi, 116</h6>
@@ -76,7 +76,7 @@ const Header = () => {
               </div>
             </div>
             <div>
-              <div className={styles.phones}>
+              <div className="phones">
                 <i className="fa-brands fa-whatsapp"></i>
                 <div>
                   <h6>+994 55 670 75 95</h6>
@@ -86,33 +86,108 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className={styles.header_bottom}>
+      <div className="header_bottom">
         <div className="container">
-          <div className={styles.header_bottom_item}>
-            <div
-              onClick={toggleIsLoading}
-              className={styles.header_bottom_menu}
-            >
+          <div className="header_bottom_item">
+            <div onClick={toggleIsLoading} className="header_bottom_menu">
               <i className="fa-solid fa-bars"></i>
-              <h6 className={styles.header_bottom_h6}>Menyu</h6>
+              <h6 className="header_bottom_h6">Menyu</h6>
             </div>
             {openmenu && (
-              <div className={styles.menu}>
-                <ul className={styles.menu_ul}>
+              <div className="menu">
+                <ul className="menu_ul">
                   <li>
-                    <Link to={"catalog/idman-qidaları"}>İdman qidaları</Link>
+                    <Link to={"catalog/idman-qidaları"}>
+                      <p className="menu_link">İdman qidaları</p>
+                    </Link>
                   </li>
-                  <li>Aksesuarlar</li>
-                  <li>Geyimlər</li>
-                  <li>İdman Alətləri və Avadanlıqları</li>
-                  <li>Məşq hərəkətləri / proqramları</li>
-                  <li>Qidalanma</li>
-                  <li>Sağlamlıq</li>
-                  <li>Atletlərimiz</li>
+                  <li>
+                    <Link>
+                      <p className="menu_link">Aksesuarlar</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link>
+                      <p className="menu_link">Geyimlər</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link>
+                      <p className="menu_link">
+                        İdman Alətləri və Avadanlıqları
+                      </p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link>
+                      <p className="menu_link">
+                        Məşq hərəkətləri / proqramları
+                      </p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link>
+                      <p className="menu_link">Qidalanma</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link>
+                      <p className="menu_link">Sağlamlıq</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link>
+                      <p className="menu_link">Atletlərimiz</p>
+                    </Link>
+                  </li>
                 </ul>
               </div>
             )}
-            <ul className={styles.header_bottom_item_ul}>
+            <div className="sport_food">
+              <ul className="menu_ul">
+                <li>
+                  <Link to={"catalog/idman-qidaları"}>
+                    <p className="menu_link">İdman qidaları</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link>
+                    <p className="menu_link">Aksesuarlar</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link>
+                    <p className="menu_link">Geyimlər</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link>
+                    <p className="menu_link">İdman Alətləri və Avadanlıqları</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link>
+                    <p className="menu_link">Məşq hərəkətləri / proqramları</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link>
+                    <p className="menu_link">Qidalanma</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link>
+                    <p className="menu_link">Sağlamlıq</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link>
+                    <p className="menu_link">Atletlərimiz</p>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <ul className="header_bottom_item_ul">
               <li>
                 <Link to={"catalog/proteinlər"}>Protein</Link>
               </li>
@@ -131,10 +206,10 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <a href="#">Arıqladıcı</a>
+                <Link to={"catalog/yağ-yandıranlar"}>Arıqladıcı</Link>
               </li>
               <li>
-                <a href="#">BCAA</a>
+                <Link to={"catalog/bcaa"}>BCAA</Link>
               </li>
               <li>
                 <a href="#">Energetik</a>
@@ -142,21 +217,23 @@ const Header = () => {
             </ul>
             <form action="">
               <input
-                className={styles.header_bottom_input}
+                className="header_bottom_input"
                 type="search"
                 id="bottom"
                 placeholder="Məhsul axtarışı"
               ></input>
-              <a href="#" className={styles.header_bottom_a}>
+              <a href="#" className="header_bottom_a">
                 <i className="fa-solid fa-magnifying-glass"></i>
               </a>
             </form>
-            <div className={styles.header_bottom_shop}>
-              <i className="fa-solid fa-cart-shopping"></i>
-              <div>
-                <span>Səbət</span>
+            <Link to="/cart">
+              <div className="header_bottom_shop">
+                <i className="fa-solid fa-cart-shopping"></i>
+                <div>
+                  <span>Səbət</span>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

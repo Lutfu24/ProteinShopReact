@@ -216,7 +216,9 @@ const Home = () => {
                       <i className="fa-regular fa-heart"></i>
                     </div>
                     <Link to={`/products/${item.id}`}>{item.name}</Link>
-                    <h1>{item.price} m</h1>
+                    <h1>
+                      {item.price} <span>₼</span>
+                    </h1>
                     <button className="popular_item_btn">Səbətə at</button>
                   </div>
                 );
@@ -245,7 +247,9 @@ const Home = () => {
                       <i className="fa-regular fa-heart"></i>
                     </div>
                     <Link to={`/products/${item.id}`}>{item.name}</Link>
-                    <h1>{item.price} m</h1>
+                    <h1>
+                      {item.price} <span>₼</span>
+                    </h1>
                     <button className="news_item_btn">Səbətə at</button>
                   </div>
                 );
@@ -274,7 +278,9 @@ const Home = () => {
                       <i className="fa-regular fa-heart"></i>
                     </div>
                     <Link to={`/products/${item.id}`}>{item.name}</Link>
-                    <h1>{item.price} m</h1>
+                    <h1>
+                      {item.price} <span>₼</span>
+                    </h1>
                     <button className="news_item_btn">Səbətə at</button>
                   </div>
                 );

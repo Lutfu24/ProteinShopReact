@@ -39,3 +39,14 @@
   align-items: center;
   padding-top: 10px;
 }
+.creatin_item_btn {
+  border: 2px solid #e1e8ed;
+  padding: 5px 30px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 2px;
+}
+.creatin_item_btn:hover {
+  border: 2px solid #cc0000;
+  transition: 0.5s;
+}

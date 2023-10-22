@@ -1,0 +1,11 @@
+.cart {
+  background: white;
+}
+.cart_section {
+  margin-top: 100px;
+}
+.cart h1 {
+  font-size: 18px;
+  font-weight: 900;
+  padding: 15px 30px;
+}

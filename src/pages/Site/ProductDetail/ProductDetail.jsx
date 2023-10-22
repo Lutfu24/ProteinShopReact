@@ -7,13 +7,15 @@ import { Link, useParams } from "react-router-dom";
 
 const Products = () => {
   const [product, setProduct] = useState([]);
-  const [productid, setProductId] = useState([]);
+  const [productid, setProductId] = useState(0);
   const [brand, setbrand] = useState([]);
   const [productImg, setProductImg] = useState([]);
-  let count = 1;
+
+  let counter = 1;
+
   const data = {
-    count,
-    productid,
+    count: counter,
+    productId: productid,
   };
 
   const { id } = useParams();
@@ -30,7 +32,6 @@ const Products = () => {
       <p>Mövcud deyil</p>;
     }
   };
-
   const IsFavorite = () => {
     if (product.isFavorite) {
       return <span>Seçilmişlərdən sil</span>;
@@ -102,7 +103,7 @@ const Products = () => {
               Sayı:
               <div className="product_detail_raiting_card_count_item">
                 <button>-</button>
-                <div>{count}</div>
+                <div>{counter}</div>
                 <button>+</button>
               </div>
             </p>

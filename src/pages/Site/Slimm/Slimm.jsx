@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Creatin.css";
+import "./Slimm.css";
 
-const Creatin = () => {
+const Slim = () => {
   const [posts, setPosts] = useState([]);
-  const id = 6;
+  const id = 1;
+  const forwomenId = 26;
   useEffect(() => {
     axios.get("http://localhost:5240/api/Products/GetAll").then((res) => {
       setPosts(res.data.data);
@@ -13,14 +14,14 @@ const Creatin = () => {
   }, []);
   return (
     <div className="container">
-      <div className="creatin_section">
+      <div className="slimm_section">
         <h1></h1>
-        <div className="creatin_section_card">
+        <div className="slimm_section_card">
           {posts.map((item, index) => {
-            if (item.catalogId === id) {
+            if (item.catalogId === id || item.catalogId === forwomenId) {
               return (
-                <div key={index} className="creatin_card">
-                  <div className="creatin_card_img">
+                <div key={index} className="slimm_card">
+                  <div className="slimm_card_img">
                     <Link to={`/products/${item.id}`}>
                       <img
                         src={require(`../../../img/pages/Home/${item.images[0].path}`)}
@@ -28,17 +29,15 @@ const Creatin = () => {
                     </Link>
                     <i className="fa-regular fa-heart"></i>
                   </div>
-                  <div className="creatin_card_body">
+                  <div className="slimm_card_body">
                     <Link to={`/products/${item.id}`}>
-                      <h5 className="creatin_card_title">{item.name}</h5>
+                      <h5 className="slimm_card_title">{item.name}</h5>
                     </Link>
-                    <div className="creatin_card_bottom">
-                      <p className="creatin_card_text">
+                    <div className="slimm_card_bottom">
+                      <p className="slimm_card_text">
                         {item.price} <span>₼</span>
                       </p>
-                      <a href="#" className="creatin_item_btn">
-                        Səbətə at
-                      </a>
+                      <button className="slimm_item_btn">Səbətə at</button>
                     </div>
                   </div>
                 </div>
@@ -51,4 +50,4 @@ const Creatin = () => {
   );
 };
 
-export default Creatin;
+export default Slim;
